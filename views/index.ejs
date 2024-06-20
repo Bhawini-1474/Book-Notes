@@ -1,0 +1,39 @@
+<%- include('partials/header.ejs'); -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+    </style>
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>BOOK LIBRARY</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Book Reviews</h2>
+        <div class="sort">
+        <h3>Sort By</h3>
+        <a id="sortByTitle" href="/title"><button>Title</button></a>
+        <a id="sortByRating" href="/rating"><button>Rating</button></a>
+        <a id="sortByRecency" href="/recency"><button>Recency</button></a>
+        </div>
+        <div class="allBooks"> 
+            <% books.forEach(book => { %>
+                <div class="book">
+                    <div class="cover">
+                        <img src="<%= book.cover_url %>" alt="book-cover">
+                    </div>
+                    <h3><%= book.title %></h3>
+                    <p><small>Date read: <%= book.date_read %>,Author: <%= book.author %>,My rating: <strong><%= book.rating %>/5</strong></small></p>
+                    <p class="review"><%= book.review %></p> 
+                </div>
+            <% }); %>
+        </div>
+        <a id="addBookBtn" href="/add-book"><button>Add Book</button></a>
+    </div>
+</body>
+</html>
+    
+    
