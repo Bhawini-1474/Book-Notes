@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+    </style>
+    <link rel="stylesheet" href="/styles/bookdetail.css">
+    <title><%= book.title %> - Review</title>
+    <script>
+        function confirmDelete(event, bookId) {
+            event.preventDefault();
+            if (confirm("Are you sure you want to delete this book?")) {
+                window.location.href = `/delete-book/${bookId}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2><%= book.title %></h2>
+        <div class="bookDetail">
+            <div class="cover">
+                <img src="<%= book.cover_url %>" alt="book-cover">
+            </div>
+            <p><small>Date read: <%= book.date_read %>, Author: <%= book.author %>, My rating: <strong><%= book.rating %>/5</strong></small></p>
+            <p class="review"><%= book.review %></p>
+            <% if (user && book.user_id === user.id) { %>
+                <a href="/edit-book/<%= book.id %>"><button>Edit</button></a>
+                <a href="#" onclick="confirmDelete(event, <%= book.id
+                <a href="#" onclick="confirmDelete(event, <%= book.id %>)"><button>Delete</button></a>
+            <% } %>
+        </div>
+        <br>
+        <a href="/"><button>Back to Reviews</button></a>
+    </div>
+</body>
+</html>

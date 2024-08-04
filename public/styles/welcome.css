@@ -1,0 +1,99 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("/images/sign up.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 25px;
+}
+
+nav{
+    box-shadow: 3px 3px 5px(0,0,0,0.1);
+    background-color: rgba(144, 41, 23, 0.881);
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li{
+    height: 100px;
+}
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgba(236, 205, 30, 0.807); 
+}
+
+nav a:hover{
+    color: #dfe1ea;
+}
+
+nav li:first-child{
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.sidebar{
+    right: 0;
+    top: 0;
+    position: fixed;
+    z-index: 999;
+    height: 100vh;
+    width: 250px;
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+sidebar a{
+    width: 100%;
+}
+.menu-button{
+    display: none;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    max-width: 600px;
+    padding: 5rem;
+    color:rgba(236, 205, 30, 0.807) ;
+    font-size: 40px;
+}
+.main-para{
+    background-color: rgba(144, 41, 23, 0.881);
+    padding: 1rem;
+}
+
+
+@media(max-width: 650px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+    
+}

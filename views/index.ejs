@@ -13,6 +13,13 @@
 <body>
     <div class="container">
         <h2>Book Reviews</h2>
+        <div class="greeting">
+        <% if (user) { %>
+            <p>Welcome, <%= user.username %>! <a href="/logout">Logout</a></p>
+        <% } else { %>
+            <p><a href="/auth/google">Login with Google</a></p>
+        <% } %>
+    </div>
         <div class="sort">
         <h3>Sort By</h3>
         <a id="sortByTitle" href="/title"><button>Title</button></a>
@@ -25,7 +32,8 @@
                     <div class="cover">
                         <img src="<%= book.cover_url %>" alt="book-cover">
                     </div>
-                    <h3><%= book.title %></h3>
+                    <h3><a href="/book/<%= book.id %>"><%= book.title %></a></h3>
+
                     <p><small>Date read: <%= book.date_read %>,Author: <%= book.author %>,My rating: <strong><%= book.rating %>/5</strong></small></p>
                     <p class="review"><%= book.review %></p> 
                 </div>

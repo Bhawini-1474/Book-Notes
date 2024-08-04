@@ -1,0 +1,36 @@
+body{
+    background-image: url("/images/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+
+}
+.cover{
+    float: left;
+    margin-right: 20px;
+}
+
+.container{
+    margin: 50px 50px;
+    background-color: rgb(241, 210, 215, 0.5);
+}
+
+h2{
+    font-family: "Platypi", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.review{
+    font-size: 25px;
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
