@@ -28,7 +28,7 @@
             <p class="review"><%= book.review %></p>
             <% if (user && book.user_id === user.id) { %>
                 <a href="/edit-book/<%= book.id %>"><button>Edit</button></a>
-                <a href="#" onclick="confirmDelete(event, <%= book.id
+                
                 <a href="#" onclick="confirmDelete(event, <%= book.id %>)"><button>Delete</button></a>
             <% } %>
         </div>
