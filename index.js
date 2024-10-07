@@ -20,7 +20,7 @@ const db = new pg.Client({
 db.connect().catch(err => console.error('Connection error', err.stack));
   
 
-db.connect();
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
