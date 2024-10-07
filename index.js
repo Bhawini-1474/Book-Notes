@@ -12,12 +12,14 @@ const port = 3000;
 dotenv.config();
 
 const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "Book_Library",
-  password: "bhanu123",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: true, // Only if you are using SSL; adjust as needed
+  },
 });
+db.connect().catch(err => console.error('Connection error', err.stack));
+  
+
 db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
